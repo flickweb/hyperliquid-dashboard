@@ -5,3 +5,6 @@ export const openPositionInput = z.object({
     side: z.enum(["long", "short"]),
     sizeUsd: z.coerce.number().positive(),
 });
+
+export type OpenPositionInput = z.infer<typeof openPositionInput>;
+export type Side = OpenPositionInput["side"];
